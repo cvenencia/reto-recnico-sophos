@@ -10,6 +10,7 @@ import com.example.retosophos.models.RentalModel;
 import com.example.retosophos.repositories.RentalRepository;
 import com.example.retosophos.repositories.RentalRepository.ClientRentGame;
 import com.example.retosophos.repositories.RentalRepository.FrequentClient;
+import com.example.retosophos.repositories.RentalRepository.MostRentedGame;
 
 @Service
 public class RentalService {
@@ -38,6 +39,10 @@ public class RentalService {
 
     public FrequentClient getMostFrequentClient() {
         return rentalRepository.getMostFrequentClient();
+    }
+
+    public MostRentedGame getMostRentedGame() {
+        return rentalRepository.getMostRentedGame();
     }
 
 }

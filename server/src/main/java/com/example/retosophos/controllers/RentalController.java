@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.retosophos.models.RentalModel;
 import com.example.retosophos.repositories.RentalRepository.ClientRentGame;
 import com.example.retosophos.repositories.RentalRepository.FrequentClient;
+import com.example.retosophos.repositories.RentalRepository.MostRentedGame;
 import com.example.retosophos.services.RentalService;
 
 @RestController
@@ -33,5 +34,10 @@ public class RentalController {
     @GetMapping(path = "/most-frequent")
     public FrequentClient getMostFrequentClient() {
         return rentalService.getMostFrequentClient();
+    }
+
+    @GetMapping(path = "/most-rented")
+    public MostRentedGame getMostRentedGame() {
+        return rentalService.getMostRentedGame();
     }
 }
