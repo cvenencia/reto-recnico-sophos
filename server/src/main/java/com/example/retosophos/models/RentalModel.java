@@ -1,6 +1,6 @@
 package com.example.retosophos.models;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,9 +18,9 @@ public class RentalModel {
     @Column(name = "game_copy_id")
     private Long gameCopyId;
     @Column(name = "rental_date")
-    private Date rentalDate;
+    private Timestamp rentalDate;
     @Column(name = "return_date")
-    private Date returnDate;
+    private Timestamp returnDate;
     private double price;
     private int returned;
 
@@ -48,19 +48,19 @@ public class RentalModel {
         this.gameCopyId = gameCopyId;
     }
 
-    public Date getRentalDate() {
+    public Timestamp getRentalDate() {
         return rentalDate;
     }
 
-    public void setRentalDate(Date rentalDate) {
+    public void setRentalDate(Timestamp rentalDate) {
         this.rentalDate = rentalDate;
     }
 
-    public Date getReturnDate() {
+    public Timestamp getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate) {
+    public void setReturnDate(Timestamp returnDate) {
         this.returnDate = returnDate;
     }
 

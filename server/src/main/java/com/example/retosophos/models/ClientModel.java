@@ -1,6 +1,6 @@
 package com.example.retosophos.models;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +17,7 @@ public class ClientModel {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    private Date birthdate;
+    private Timestamp birthdate;
 
     public Long getId() {
         return id;
@@ -43,11 +43,11 @@ public class ClientModel {
         this.lastName = lastName;
     }
 
-    public Date getBirthdate() {
+    public Timestamp getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(Timestamp birthdate) {
         this.birthdate = birthdate;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.retosophos.models;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +17,7 @@ public class GameModel {
     private String producer;
     private String director;
     @Column(name = "launch_date")
-    private Date launchDate;
+    private Timestamp launchDate;
 
     public Long getId() {
         return id;
@@ -51,11 +51,11 @@ public class GameModel {
         this.director = director;
     }
 
-    public Date getLaunchDate() {
+    public Timestamp getLaunchDate() {
         return launchDate;
     }
 
-    public void setLaunchDate(Date launchDate) {
+    public void setLaunchDate(Timestamp launchDate) {
         this.launchDate = launchDate;
     }
 
