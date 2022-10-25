@@ -6,12 +6,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "game")
+@Table(name = "game_copy")
 public class GameCopyModel {
 
     @Id
     private Long id;
-    @Column(name = "game_copy_id")
+    @Column(name = "platform_game_id")
     private Long platformGameId;
 
     public Long getId() {
