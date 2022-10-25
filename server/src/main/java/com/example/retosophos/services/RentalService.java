@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.retosophos.models.RentalModel;
 import com.example.retosophos.repositories.RentalRepository;
 import com.example.retosophos.repositories.RentalRepository.ClientRentGame;
+import com.example.retosophos.repositories.RentalRepository.FrequentClient;
 
 @Service
 public class RentalService {
@@ -33,6 +34,10 @@ public class RentalService {
             return rental;
         rental.setReturned(1);
         return rentalRepository.save(rental);
+    }
+
+    public FrequentClient getMostFrequentClient() {
+        return rentalRepository.getMostFrequentClient();
     }
 
 }

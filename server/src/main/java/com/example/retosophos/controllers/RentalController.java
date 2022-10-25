@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.retosophos.models.RentalModel;
 import com.example.retosophos.repositories.RentalRepository.ClientRentGame;
+import com.example.retosophos.repositories.RentalRepository.FrequentClient;
 import com.example.retosophos.services.RentalService;
 
 @RestController
@@ -27,5 +28,10 @@ public class RentalController {
     @PostMapping(path = "/claim")
     public RentalModel claimRental(@RequestBody Long id) {
         return rentalService.claimRental(id);
+    }
+
+    @GetMapping(path = "/most-frequent")
+    public FrequentClient getMostFrequentClient() {
+        return rentalService.getMostFrequentClient();
     }
 }
