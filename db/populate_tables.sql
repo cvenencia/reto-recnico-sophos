@@ -83,3 +83,28 @@ INSERT INTO game_copy(platform_game_id) VALUES(13);
 INSERT INTO game_copy(platform_game_id) VALUES(14);
 INSERT INTO game_copy(platform_game_id) VALUES(15);
 INSERT INTO game_copy(platform_game_id) VALUES(15);
+
+-------------------------------------------------------
+-- TABLA DE RENTAS
+
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 1, '11/03/2022', '16/03/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 3, '27/03/2022', '02/04/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 4, '06/04/2022', '11/04/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 5, '30/06/2022', '05/07/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 6, '23/07/2022', '28/07/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 2, '19/08/2022', '24/08/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 7, '25/08/2022', '30/08/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 8, '11/09/2022', '16/09/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 10, '12/09/2022', '17/09/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 11, '22/09/2022', '22/09/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (1, 9, '07/10/2022', '07/10/2022', 15000, 1);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (2, 12, '20/10/2022', NULL, 15000, 0);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (2, 13, '20/10/2022', NULL, 15000, 0);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (2, 14, '21/10/2022', NULL, 15000, 0);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (3, 1, '21/10/2022', NULL, 15000, 0);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (3, 3, '22/10/2022', NULL, 15000, 0);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (3, 15, '22/10/2022', NULL, 15000, 0);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (3, 16, '23/10/2022', NULL, 15000, 0);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (4, 3, '23/10/2022', NULL, 15000, 0);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (4, 18, '24/10/2022', NULL, 15000, 0);
+INSERT INTO rental(client_id, game_copy_id, rental_date, return_date, price, returned) VALUES (5, 19, '25/10/2022', NULL, 15000, 2);
