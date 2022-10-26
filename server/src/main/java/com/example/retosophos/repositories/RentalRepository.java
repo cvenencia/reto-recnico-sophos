@@ -33,6 +33,14 @@ public interface RentalRepository extends CrudRepository<RentalModel, Long> {
         public Long getCount();
     }
 
+    public interface SalesOfDay {
+        public String getFullName();
+
+        public String getTitle();
+
+        public int getPrice();
+    }
+
     @Query(value = "SELECT r.id, c.first_name || ' ' || c.last_name fullName, r.rental_date rentalDate, g.title, p.platform FROM rental r JOIN client c ON c.id=r.client_id JOIN game_copy gc ON gc.id=r.game_copy_id JOIN platform_game pg ON gc.platform_game_id=pg.id JOIN platform p ON pg.platform_id=p.id JOIN game g ON pg.game_id=g.id WHERE returned=0 AND rental_date + ?1 < ?2", nativeQuery = true)
     public Collection<ClientRentGame> getOverdueClients(int rentalDays, String currentDate);
 
@@ -41,5 +49,8 @@ public interface RentalRepository extends CrudRepository<RentalModel, Long> {
 
     @Query(value = "SELECT g.id gameId, COUNT(g.id) count FROM rental r JOIN game_copy gc ON gc.id=r.game_copy_id JOIN platform_game pg ON gc.platform_game_id=pg.id JOIN game g ON pg.game_id=g.id GROUP BY g.id FETCH FIRST 1 ROWS ONLY", nativeQuery = true)
     public MostRentedGame getMostRentedGame();
+
+    @Query(value = "SELECT r.price, g.title, c.first_name || ' ' || c.last_name fullName  FROM rental r JOIN game_copy gc ON gc.id=r.game_copy_id JOIN platform_game pg ON gc.platform_game_id=pg.id JOIN game g ON pg.game_id=g.id JOIN client c ON c.id=r.client_id WHERE r.rental_date = ?1", nativeQuery = true)
+    public Collection<SalesOfDay> getSalesOfDay(String date);
 
 }

@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.retosophos.models.RentalModel;
 import com.example.retosophos.repositories.RentalRepository.ClientRentGame;
 import com.example.retosophos.repositories.RentalRepository.FrequentClient;
 import com.example.retosophos.repositories.RentalRepository.MostRentedGame;
+import com.example.retosophos.repositories.RentalRepository.SalesOfDay;
 import com.example.retosophos.services.RentalService;
 
 @RestController
@@ -39,5 +41,10 @@ public class RentalController {
     @GetMapping(path = "/most-rented")
     public MostRentedGame getMostRentedGame() {
         return rentalService.getMostRentedGame();
+    }
+
+    @GetMapping(path = "/sales")
+    public Collection<SalesOfDay> getSalesOfDay(@RequestParam("date") String date) {
+        return rentalService.getSalesOfDay(date);
     }
 }

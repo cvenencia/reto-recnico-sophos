@@ -11,6 +11,7 @@ import com.example.retosophos.repositories.RentalRepository;
 import com.example.retosophos.repositories.RentalRepository.ClientRentGame;
 import com.example.retosophos.repositories.RentalRepository.FrequentClient;
 import com.example.retosophos.repositories.RentalRepository.MostRentedGame;
+import com.example.retosophos.repositories.RentalRepository.SalesOfDay;
 
 @Service
 public class RentalService {
@@ -43,6 +44,10 @@ public class RentalService {
 
     public MostRentedGame getMostRentedGame() {
         return rentalRepository.getMostRentedGame();
+    }
+
+    public Collection<SalesOfDay> getSalesOfDay(String date) {
+        return rentalRepository.getSalesOfDay(date);
     }
 
 }
