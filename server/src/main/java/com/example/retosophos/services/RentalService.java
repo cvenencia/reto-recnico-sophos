@@ -10,7 +10,7 @@ import com.example.retosophos.models.RentalModel;
 import com.example.retosophos.repositories.RentalRepository;
 import com.example.retosophos.repositories.RentalRepository.ClientRentGame;
 import com.example.retosophos.repositories.RentalRepository.FrequentClient;
-import com.example.retosophos.repositories.RentalRepository.MostRentedGame;
+import com.example.retosophos.repositories.RentalRepository.RentedGameCount;
 import com.example.retosophos.repositories.RentalRepository.SalesOfDay;
 
 @Service
@@ -42,12 +42,16 @@ public class RentalService {
         return rentalRepository.getMostFrequentClient();
     }
 
-    public MostRentedGame getMostRentedGame() {
+    public RentedGameCount getMostRentedGame() {
         return rentalRepository.getMostRentedGame();
     }
 
     public Collection<SalesOfDay> getSalesOfDay(String date) {
         return rentalRepository.getSalesOfDay(date);
+    }
+
+    public RentedGameCount getLeastRentedGameByAge(int startAge, int finishAge) {
+        return rentalRepository.getLeastRentedGameByAge(startAge, finishAge);
     }
 
 }

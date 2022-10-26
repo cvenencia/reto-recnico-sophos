@@ -27,7 +27,7 @@ public interface RentalRepository extends CrudRepository<RentalModel, Long> {
         public Long getCount();
     }
 
-    public interface MostRentedGame {
+    public interface RentedGameCount {
         public Long getGameId();
 
         public Long getCount();
@@ -47,10 +47,13 @@ public interface RentalRepository extends CrudRepository<RentalModel, Long> {
     @Query(value = "SELECT client_id clientId, count(*) count FROM rental GROUP BY client_id FETCH FIRST 1 ROWS ONLY", nativeQuery = true)
     public FrequentClient getMostFrequentClient();
 
-    @Query(value = "SELECT g.id gameId, COUNT(g.id) count FROM rental r JOIN game_copy gc ON gc.id=r.game_copy_id JOIN platform_game pg ON gc.platform_game_id=pg.id JOIN game g ON pg.game_id=g.id GROUP BY g.id FETCH FIRST 1 ROWS ONLY", nativeQuery = true)
-    public MostRentedGame getMostRentedGame();
+    @Query(value = "SELECT g.id gameId, COUNT(g.id) count FROM rental r JOIN game_copy gc ON gc.id=r.game_copy_id JOIN platform_game pg ON gc.platform_game_id=pg.id JOIN game g ON pg.game_id=g.id GROUP BY g.id ORDER BY count DESC FETCH FIRST 1 ROWS ONLY", nativeQuery = true)
+    public RentedGameCount getMostRentedGame();
 
     @Query(value = "SELECT r.price, g.title, c.first_name || ' ' || c.last_name fullName  FROM rental r JOIN game_copy gc ON gc.id=r.game_copy_id JOIN platform_game pg ON gc.platform_game_id=pg.id JOIN game g ON pg.game_id=g.id JOIN client c ON c.id=r.client_id WHERE r.rental_date = ?1", nativeQuery = true)
     public Collection<SalesOfDay> getSalesOfDay(String date);
+
+    @Query(value = "SELECT id gameId, count(*) count FROM (SELECT g.id, g.title, EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM c.birthdate) edad FROM rental r JOIN game_copy gc ON gc.id=r.game_copy_id JOIN platform_game pg ON gc.platform_game_id=pg.id JOIN game g ON pg.game_id=g.id JOIN client c ON c.id=r.client_id) WHERE edad >= ?1 AND edad < ?2 GROUP BY id ORDER BY count ASC FETCH FIRST 1 ROWS ONLY", nativeQuery = true)
+    public RentedGameCount getLeastRentedGameByAge(int startAge, int finishAge);
 
 }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.retosophos.models.RentalModel;
 import com.example.retosophos.repositories.RentalRepository.ClientRentGame;
 import com.example.retosophos.repositories.RentalRepository.FrequentClient;
-import com.example.retosophos.repositories.RentalRepository.MostRentedGame;
+import com.example.retosophos.repositories.RentalRepository.RentedGameCount;
 import com.example.retosophos.repositories.RentalRepository.SalesOfDay;
 import com.example.retosophos.services.RentalService;
 
@@ -39,12 +39,18 @@ public class RentalController {
     }
 
     @GetMapping(path = "/most-rented")
-    public MostRentedGame getMostRentedGame() {
+    public RentedGameCount getMostRentedGame() {
         return rentalService.getMostRentedGame();
     }
 
     @GetMapping(path = "/sales")
     public Collection<SalesOfDay> getSalesOfDay(@RequestParam("date") String date) {
         return rentalService.getSalesOfDay(date);
+    }
+
+    @GetMapping(path = "/least-rented-by-age-group")
+    public RentedGameCount getLeastRentedGameByAge(@RequestParam("startAge") int startAge,
+            @RequestParam("finishAge") int finishAge) {
+        return rentalService.getLeastRentedGameByAge(startAge, finishAge);
     }
 }
