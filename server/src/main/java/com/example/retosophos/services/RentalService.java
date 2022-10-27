@@ -1,5 +1,7 @@
 package com.example.retosophos.services;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,7 @@ public class RentalService {
         if (rental.getReturned() == 1)
             return rental;
         rental.setReturned(1);
+        rental.setReturnDate(new Timestamp(Instant.now().toEpochMilli()));
         return rentalRepository.save(rental);
     }
 
