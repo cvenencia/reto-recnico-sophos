@@ -40,3 +40,10 @@ export async function getMostFrequentClient() {
         response.clientId && (await getClientById(response.clientId));
     return { count: response.count, client };
 }
+
+export async function getSalesOfDay(day) {
+    const url = process.env.REACT_APP_API_URL + `/rental/sales?date=${day}`;
+
+    const response = await axios.get(url).then(response => response.data);
+    return response;
+}

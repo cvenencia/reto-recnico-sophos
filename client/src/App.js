@@ -3,6 +3,8 @@ import ClientBalance from './pages/Client/ClientBalance';
 import LeastRented from './pages/Admin/LeastRented';
 import MostRented from './pages/Admin/MostRented/MostRented';
 import MostFrequent from './pages/Admin/MostFrequent/MostFrequent';
+import SalesOfDay from './pages/Admin/SalesOfDay/SalesOfDay';
+import Admin from './pages/Admin/Admin';
 
 function App() {
     return (
@@ -19,6 +21,7 @@ function App() {
                     </Route>
 
                     <Route path='/admin'>
+                        <Route index element={<Admin />} />
                         <Route
                             path='least-rented-by-age-group'
                             element={<LeastRented />}
@@ -31,6 +34,7 @@ function App() {
                             path='most-frequent-client'
                             element={<MostFrequent />}
                         />
+                        <Route path='sales-of-day' element={<SalesOfDay />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
