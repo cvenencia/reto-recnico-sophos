@@ -1,12 +1,24 @@
-import Header from './components/header/Header';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ClientBalance from './pages/Client/ClientBalance';
+import Admin from './pages/Admin';
 
 function App() {
     return (
         <div className='App'>
-            <Header
-                title='Cliente'
-                links={[<a href='/'>oli</a>, <a href='/'>xd</a>]}
-            />
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/client'>
+                        <Route path=':id'>
+                            <Route
+                                path='balance'
+                                element={<ClientBalance />}
+                            ></Route>
+                        </Route>
+                    </Route>
+
+                    <Route path='/admin' element={<Admin />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

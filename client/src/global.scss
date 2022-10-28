@@ -10,3 +10,26 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
+
+table {
+    margin: auto;
+
+    tr:nth-child(2n),
+    thead tr {
+        background-color: #ccc;
+    }
+
+    caption {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    thead td {
+        font-weight: bold;
+    }
+
+    td {
+        padding: 0.5em;
+        text-align: center;
+    }
+}

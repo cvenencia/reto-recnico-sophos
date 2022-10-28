@@ -7,9 +7,8 @@ export default function Header({ links, title }) {
             <div>{title}</div>
             <nav>
                 <ul>
-                    {links.map((link, index) => (
-                        <li key={index}>{link}</li>
-                    ))}
+                    {links &&
+                        links.map((link, index) => <li key={index}>{link}</li>)}
                 </ul>
             </nav>
         </header>
