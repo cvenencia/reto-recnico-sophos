@@ -1,6 +1,7 @@
 package com.example.retosophos.controllers;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,8 +30,8 @@ public class RentalController {
     }
 
     @PostMapping(path = "/claim")
-    public RentalModel claimRental(@RequestBody Long id) {
-        return rentalService.claimRental(id);
+    public RentalModel claimRental(@RequestBody Map<String, Long> payload) {
+        return rentalService.claimRental(payload.get("id"));
     }
 
     @GetMapping(path = "/most-frequent")
