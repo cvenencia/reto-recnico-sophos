@@ -22,7 +22,7 @@ export default function MostFrequent() {
                     }}
                 />
             )}
-            (
+
             {data.client && (
                 <>
                     <h1>Cliente más frecuente</h1>
@@ -38,7 +38,6 @@ export default function MostFrequent() {
                     </p>
                 </>
             )}
-            )
         </Admin>
     );
 }

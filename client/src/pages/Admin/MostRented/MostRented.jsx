@@ -22,14 +22,13 @@ export default function MostRented() {
                     }}
                 />
             )}
-            (<h1>Juego más rentado</h1>
+            <h1>Juego más rentado</h1>
             <p>
                 Título: <span>{data.game && data.game.title}</span>
             </p>
             <p>
                 Cantidad: <span>{data && data.count}</span>
             </p>
-            )
         </Admin>
     );
 }
