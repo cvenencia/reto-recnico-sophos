@@ -47,3 +47,19 @@ export async function getSalesOfDay(day) {
     const response = await axios.get(url).then(response => response.data);
     return response;
 }
+
+export async function getOverdueClients() {
+    const url = process.env.REACT_APP_API_URL + `/rental/overdue-clients`;
+
+    const response = await axios.get(url).then(response => response.data);
+    return response;
+}
+
+export async function claimRental(id) {
+    const url = process.env.REACT_APP_API_URL + `/rental/claim`;
+
+    const response = await axios
+        .post(url, { id })
+        .then(response => response.data);
+    return response;
+}

@@ -5,6 +5,7 @@ import MostRented from './pages/Admin/MostRented/MostRented';
 import MostFrequent from './pages/Admin/MostFrequent/MostFrequent';
 import SalesOfDay from './pages/Admin/SalesOfDay/SalesOfDay';
 import Admin from './pages/Admin/Admin';
+import Claim from './pages/Admin/Claim/Claim';
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                             element={<MostFrequent />}
                         />
                         <Route path='sales-of-day' element={<SalesOfDay />} />
+                        <Route path='claim' element={<Claim />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
