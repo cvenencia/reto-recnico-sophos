@@ -22,3 +22,12 @@ export async function getLeastRentedGamesByAgeGroup() {
     }
     return list;
 }
+
+export async function getMostRentedGame() {
+    const url = process.env.REACT_APP_API_URL + `/rental/most-rented`;
+
+    const response = await axios.get(url).then(response => response.data);
+    const game = response.gameId && (await getGameById(response.gameId));
+    console.log(response);
+    return { count: response.count, game };
+}

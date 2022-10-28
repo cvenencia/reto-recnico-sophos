@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { ClipLoader } from 'react-spinners';
 import { getLeastRentedGamesByAgeGroup } from '../../../services/api/rental';
 import Admin from '../Admin';
 
@@ -10,13 +11,19 @@ export default function LeastRented() {
         getLeastRentedGamesByAgeGroup().then(setList);
     }, []);
 
-    useEffect(() => {
-        console.log(list);
-    }, [list]);
-
     return (
         <Admin>
             <h1>Juego menos rentado por edad</h1>
+            {list.length === 0 && (
+                <ClipLoader
+                    color='#36d7b7'
+                    size={100}
+                    cssOverride={{
+                        margin: 'auto',
+                        display: 'block',
+                    }}
+                />
+            )}
             {list.length !== 0 && (
                 <table border={1}>
                     <thead>

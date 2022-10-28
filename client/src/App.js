@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ClientBalance from './pages/Client/ClientBalance';
-import Admin from './pages/Admin';
 import LeastRented from './pages/Admin/LeastRented';
+import MostRented from './pages/Admin/MostRented/MostRented';
 
 function App() {
     return (
@@ -21,6 +21,10 @@ function App() {
                         <Route
                             path='least-rented-by-age-group'
                             element={<LeastRented />}
+                        />
+                        <Route
+                            path='most-rented-game'
+                            element={<MostRented />}
                         />
                     </Route>
                 </Routes>
