@@ -4,11 +4,13 @@ import Header from '../../components/header';
 
 export default function Admin({ children }) {
     const links = [
-        <Link to='claim'>Reclamar rentas</Link>,
-        <Link to='most-frequent-client'>Cliente más frecuente</Link>,
-        <Link to='most-rented-game'>Juego más rentado</Link>,
-        <Link to='sales-of-day'>Ventas del día</Link>,
-        <Link to='least-rented-by-age-group'>Menos rentado por edad</Link>,
+        <Link to='/admin/claim'>Reclamar rentas</Link>,
+        <Link to='/admin/most-frequent-client'>Cliente más frecuente</Link>,
+        <Link to='/admin/most-rented-game'>Juego más rentado</Link>,
+        <Link to='/admin/sales-of-day'>Ventas del día</Link>,
+        <Link to='/admin/least-rented-by-age-group'>
+            Menos rentado por edad
+        </Link>,
     ];
 
     return (
