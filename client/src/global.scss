@@ -37,3 +37,16 @@ table {
 .spinner {
     display: block;
 }
+
+p,
+h1 {
+    text-align: center;
+}
+
+p {
+    font-size: 1.25rem;
+
+    span {
+        font-weight: bold;
+    }
+}

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getClientById } from './client';
 import { getGameById } from './game';
 
 export async function getLeastRentedGamesByAgeGroup() {
@@ -28,6 +29,14 @@ export async function getMostRentedGame() {
 
     const response = await axios.get(url).then(response => response.data);
     const game = response.gameId && (await getGameById(response.gameId));
-    console.log(response);
     return { count: response.count, game };
+}
+
+export async function getMostFrequentClient() {
+    const url = process.env.REACT_APP_API_URL + `/rental/most-frequent`;
+
+    const response = await axios.get(url).then(response => response.data);
+    const client =
+        response.clientId && (await getClientById(response.clientId));
+    return { count: response.count, client };
 }

@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Client from '../Client';
 import { getClientBalance } from '../../../services/api/client';
-import './styles.scss';
 
 export default function ClientBalance() {
     const { id } = useParams();

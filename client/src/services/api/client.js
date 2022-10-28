@@ -7,3 +7,11 @@ export async function getClientBalance(id) {
 
     return response;
 }
+
+export async function getClientById(id) {
+    const url = process.env.REACT_APP_API_URL + `/client/${id}`;
+
+    const response = await axios.get(url).then(response => response.data);
+
+    return response;
+}

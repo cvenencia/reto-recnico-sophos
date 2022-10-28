@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ClientBalance from './pages/Client/ClientBalance';
 import LeastRented from './pages/Admin/LeastRented';
 import MostRented from './pages/Admin/MostRented/MostRented';
+import MostFrequent from './pages/Admin/MostFrequent/MostFrequent';
 
 function App() {
     return (
@@ -25,6 +26,10 @@ function App() {
                         <Route
                             path='most-rented-game'
                             element={<MostRented />}
+                        />
+                        <Route
+                            path='most-frequent-client'
+                            element={<MostFrequent />}
                         />
                     </Route>
                 </Routes>
