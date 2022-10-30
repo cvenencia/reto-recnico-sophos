@@ -50,3 +50,11 @@ p {
         font-weight: bold;
     }
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 12em;
+    margin: auto;
+    gap: 1em;
+}

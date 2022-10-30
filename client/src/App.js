@@ -7,13 +7,19 @@ import SalesOfDay from './pages/Admin/SalesOfDay';
 import Admin from './pages/Admin';
 import Claim from './pages/Admin/Claim';
 import GameSearch from './pages/Client/GameSearch/GameSearch';
+import Main from './pages/Main/Main';
+import Client from './pages/Client/Client';
+import ClientSelector from './pages/Client/ClientSelector';
 
 function App() {
     return (
         <div className='App'>
             <BrowserRouter>
                 <Routes>
+                    <Route index element={<Main />} />
                     <Route path='/client'>
+                        <Route index element={<Client />} />
+                        <Route path='balance' element={<ClientSelector />} />
                         <Route path=':id'>
                             <Route
                                 path='balance'
