@@ -9,6 +9,5 @@ export async function getFilteredGames(director, producer, protagonistName) {
     const url =
         process.env.REACT_APP_API_URL +
         `/game?director=${director}&producer=${producer}&protagonist_name=${protagonistName}`;
-    console.log(url);
     return await axios.get(url).then(response => response.data);
 }
