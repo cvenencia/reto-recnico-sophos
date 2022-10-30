@@ -5,7 +5,7 @@ import Header from '../../components/header';
 export default function Client({ children }) {
     const links = [
         <Link to='/client/balance'>Balance</Link>,
-        <Link to='/game-list'>Consulta de juegos</Link>,
+        <Link to='/client/game-search'>Consulta de juegos</Link>,
     ];
 
     return (

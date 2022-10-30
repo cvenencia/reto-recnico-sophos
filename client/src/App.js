@@ -6,6 +6,7 @@ import MostFrequent from './pages/Admin/MostFrequent';
 import SalesOfDay from './pages/Admin/SalesOfDay';
 import Admin from './pages/Admin';
 import Claim from './pages/Admin/Claim';
+import GameSearch from './pages/Client/GameSearch/GameSearch';
 
 function App() {
     return (
@@ -19,6 +20,10 @@ function App() {
                                 element={<ClientBalance />}
                             ></Route>
                         </Route>
+                        <Route
+                            path='game-search'
+                            element={<GameSearch />}
+                        ></Route>
                     </Route>
 
                     <Route path='/admin'>
